@@ -1,0 +1,155 @@
+
+\section{Misc 杂项}
+
+\subsection{C/C++ IO Cheat Sheet}
+
+\subsubsection{read()}
+
+\begin{cpplist}
+#define getchar() \
+    (tt==ss&&(tt=(ss=In)+fread(In,1,1<<20,stdin),ss==tt)?EOF:*ss++)
+char In[1 << 20], *ss=In, *tt=In;
+int read() {
+    int x=0,f=1;
+    char c=getchar();
+    while(c<'0'||c>'9'){if(c=='-') f=-1;c=getchar();}
+    while(c>='0'&&c<='9') x=x*10+c-'0',c=getchar();
+    return x*f;
+}
+\end{cpplist}
+
+\subsubsection{std::cin}
+
+\begin{cpplist}
+    // ref: https://blog.csdn.net/lingfeng2019/article/details/78463012
+    // set base = 16, 8, 10 (reading integer) 
+    std::cin >> (std::hex, std::oct, std::dec) >> number;
+    // ignore next `count` chars (counting trailing '\0')
+    istream & std::istream::ignore(int count = 1, int delim = EOF);
+    // read next `count` chars to `buf` (counting trailing '\0')
+    istream & std::istream::get(char * buf, int count, char delim = '\n');
+    // read next `count` chars and don't add '\0' at the end of `buff`
+    std::cin.read(buf, 5).read(buf + 5, 5);
+    // peek (and don't read in) the next char
+    char ch = std::cin.peek();
+    // then we have: $peek() = get(ch) + putback(ch)$.
+\end{cpplist}
+
+\subsection{Python Helper}
+
+记忆化装饰器 ~ \lstinline|@lru_cache(maxsize=128, typed=False)|
+
+\begin{py3list}
+@lru_cache(maxsize = None)  # None表示无限缓存
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+\end{py3list}
+
+\subsection{Bit Tricks}
+
+\noindent \textbf{\textbf{References:}}
+\begin{compactenum}[(i)]
+\item \url{https://codeforces.com/blog/entry/98332}
+\item \url{https://graphics.stanford.edu/~seander/bithacks.html}
+\end{compactenum}
+
+\begin{compactenum}[1.]
+
+\item 异号判定
+
+\begin{cpplist}
+// Detect if two integers have opposite signs:
+bool f = ((x ^ y) < 0); 
+\end{cpplist}
+
+\item 从高位加到低位的加法(见DFT/NTT)
+
+\item 枚举子集、枚举超集
+
+\begin{cpplist}
+for (int s = t; s; s = (s - 1) & m) {} // subset
+for (int s = t; s < max_state; s = (s + 1) | t) {} // superset
+\end{cpplist}
+
+\item 枚举所有掩码的子掩码复杂度 $\BigO(\displaystyle\sum_{m=1}^{2^n}2^m)=\BigO(3^n)$
+
+\item 
+next permutation
+
+\begin{cpplist}
+int t = x | (x - 1);
+x = (t + 1) | (((~t & -~t) - 1) >> (__builtin_ctz(x) + 1));
+\end{cpplist}
+
+\end{compactenum}
+
+\subsection{.vimrc}
+
+\begin{lstlisting}[language=,
+lineskip=-1.5pt,
+frame=lines,
+numbers=left,
+numberstyle=\color{numberColor}\footnotesize\consolff,
+basicstyle=\consolff\zihao{-5},
+morecomment={[f][\color{gray}][0]{"}},
+morecomment={[f][\color{gray}][12]{"}},
+keywordstyle={\bfseries},
+keywords={[2]{endfunc, set, color, nmap, map, func, exec, endfunc, set}}
+keywordstyle={[2]{\bfseries}},
+keywords={[3]{nu, ci, hls, ar, aw, is, et, sm, ai, ic, cul, cuc, nocp, noeb, smarttab, ts, hi, ch, so, bs, ls, sw, sts, mouse, completeopt, statusline}},
+keywordstyle={[3]{\bfseries\color{blue}\consolff}},
+showstringspaces=false]
+set nu      "number
+set ci      "cindent
+set hls     "hlsearch
+set ar      "autoread
+set aw      "autowrite
+set is      "incsearch
+set et      "expandtab
+set sm      "showmatch
+set ai      "autoindent
+set ic      "ignorecase
+set cul     "cursorline
+set cuc     "cursorcolumn
+set nocp    "nocompatible
+set noeb    "noerrorbells
+set smarttab 
+
+set ts=4    "tabstop
+set hi=1000 "history
+set ch=2    "cmdheight
+set so=3    "scrolloff
+set bs=2    "backspace
+set ls=2    "laststatus
+set sw=4    "shiftwidth
+set sts=4   "sosttabstop
+set mouse=a
+set completeopt=longest,menu
+set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v]\ %{strftime(\"%H:%M\")}
+
+color ron
+" color torte
+nmap tt :%s/\t/  /g<CR>
+
+map <F8> :call Rungdb()<CR>
+func! Rungdb()
+exec "w"
+exec "!g++ % -g -o gdb_%< && gdb ./gdb_%<"
+endfunc
+\end{lstlisting}
+
+\subsection{Check list}
+
+\begin{compactenum}
+\item 数组是否需要排序？
+\item 数据范围是否符合预期？
+\item 模数是否正确？
+\item 是否混用c/c++ IO？
+\item 多组或多轮情形下： 初始化好了吗？
+\item 下标起始是0还是1？是否与输入同步（加减1）？
+\item debug 时修改的细节是否恢复？
+\item 被左移的数是否须为 long long？
+\item 输出格式是否匹配精度要求？精度过高是否会导致死循环？
+\end{compactenum}

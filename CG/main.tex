@@ -1,0 +1,52 @@
+
+\section{Computational Geometry 计算几何}
+
+\subsection{utils / tools 实用工具}
+
+\subsubsection{二维向量 vector 2d}
+
+\cppinputlisting{Vec2}
+
+\subsubsection{三维向量 vector 3d}
+
+\cppinputlisting{Vec3}
+
+\subsection{Algorithms 算法}
+
+\subsubsection{凸包构建 Andrew's Algorithm for Convex Hull}
+
+\cppinputlisting{ConvexHull}
+
+\subsubsection{旋转卡壳 Rotating Calipers}
+
+\cppinputlisting{RotatingCalipers}
+
+\subsubsection{Delaunay 三角剖分 Triangulation}
+
+\cppinputlisting{Delaunay}
+
+\subsection{Formula/Notes 公式/注记}
+
+\subsubsection{Pick 定理}
+
+对于平行四边形格点中的简单多边形，面积 $A$、内部格点数 $i$、边上格点数 $b$ 满足 $A = i + \frac{b}{2} - 1$；对于三角形格点则为 $A = 2i + b - 2$.
+
+\subsubsection{三角形外接圆}
+
+\begin{equation*}
+\begin{cases}
+D = \frac{(x_2^2+y_2^2-x_3^2+y_3^2)(y_1-y_2)}{(x_1-x_2)(y_2-y_3)-(x_2-x_3)(y_1-y_2)}
+\\[10pt]
+E = \frac{x_1^2+y_1^2-x_2^2-y_2^2+D(x_1-x_2)}{y_2-y_1}
+\\
+F = -(x_1^2 + y_1^2 + D x_1 + E y_1)
+\\
+O = (-\frac{D}{2}, -\frac{E}{2})
+\\[10pt]
+r = \frac{D^2 + E^2 - 4F}{4}
+\end{cases}
+\end{equation*}
+
+\cppinputlisting{Circumcircle}
+
+

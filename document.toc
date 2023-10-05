@@ -1,0 +1,77 @@
+\contentsline {section}{\numberline {1}Math 数学}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Prime 素性}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}大数的判素与分解}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}筛法}{4}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}莫比乌斯反演 mobius inversion}{5}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}同余}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}exgcd}{5}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}exCRT}{6}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}离散对数 (ex)bsgs}{7}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}多项式 Polynomial}{9}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}FFT/NTT}{9}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}组合数学 Conbinatorics}{10}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Polynomial (MOD 998244353)}{10}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}MAGIC PRIMES}{15}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Notes}{15}{subsection.1.6}%
+\contentsline {section}{\numberline {2}String 字符串}{17}{section.2}%
+\contentsline {subsection}{\numberline {2.1}String-Match 字符串匹配}{17}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}KMP}{17}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Z function}{17}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}AC 自动机}{17}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}BM}{18}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}后缀数组}{19}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}后缀自动机}{20}{subsubsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.2}misc}{22}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}回文串}{22}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Lyndon 分解 - Duval 算法}{24}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}最小表示法}{24}{subsubsection.2.2.3}%
+\contentsline {section}{\numberline {3}Data Structure 数据结构}{25}{section.3}%
+\contentsline {subsection}{\numberline {3.1}BST （二叉）平衡树}{25}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}伸展树 Splay}{25}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}可持续化 fhq treap}{29}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}动态树 Link Cut Tree}{31}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}STL / pbds}{35}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}优先队列 \& 树哈希}{35}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}bits/extc++.h}{35}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}misc}{36}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}(左偏树)可并堆 Left Heap}{36}{subsubsection.3.3.1}%
+\contentsline {section}{\numberline {4}Graph 图论}{38}{section.4}%
+\contentsline {subsection}{\numberline {4.1}特殊图性质}{38}{subsection.4.1}%
+\contentsline {paragraph}{\numberline {a.}竞赛图:}{38}{paragraph.4.1.0.1}%
+\contentsline {subsection}{\numberline {4.2}SP 最短路 Shortest Path}{38}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}MST 最小生成树 Minimal Spanning Tree}{40}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}矩阵树定理 Kirchhoff's matrix tree theorem}{40}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Kruskal（可判定唯一性）}{40}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Prim}{41}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Boruvka}{41}{subsubsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.5}XOR-MST 最小异或生成树}{41}{subsubsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.4}网络流 Net Flow}{42}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}XX连通分量 XX-Connected Component}{43}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}树の剖分 Decomposition}{46}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}支配树 Dominator Tree}{49}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Computational Geometry 计算几何}{51}{section.5}%
+\contentsline {subsection}{\numberline {5.1}utils / tools 实用工具}{51}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}二维向量 vector 2d}{51}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}三维向量 vector 3d}{51}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Algorithms 算法}{51}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}凸包构建 Andrew's Algorithm for Convex Hull}{51}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}旋转卡壳 Rotating Calipers}{52}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Delaunay 三角剖分 Triangulation}{53}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}Formula/Notes 公式/注记}{56}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Pick 定理}{56}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}三角形外接圆}{56}{subsubsection.5.3.2}%
+\contentsline {section}{\numberline {6}Misc 杂项}{57}{section.6}%
+\contentsline {subsection}{\numberline {6.1}C/C++ IO Cheat Sheet}{57}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}read()}{57}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}std::cin}{57}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Python Helper}{57}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Bit Tricks}{57}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}.vimrc}{58}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Check list}{58}{subsection.6.5}%
+\contentsline {section}{\numberline {7}TEST}{59}{section.7}%
+\contentsline {subsection}{\numberline {7.1}ALL todo lists}{59}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Math}{59}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}String}{59}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.3}Data-Structure}{59}{subsubsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.4}Graph}{59}{subsubsection.7.1.4}%
+\contentsline {subsubsection}{\numberline {7.1.5}CG}{59}{subsubsection.7.1.5}%

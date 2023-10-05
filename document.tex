@@ -1,0 +1,43 @@
+%!TEX program = xelatex
+\documentclass[12pt,UTF8]{ctexart} % 正文小四号字体 12pt
+\input{preconfig} % 预配置(导言区) pre-configuration
+
+\begin{document} \cntextff 
+
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture]
+ 
+\include{titlepage}
+
+\newpage 
+\setcounter{page}{1}
+
+\tableofcontents
+
+\newpage 
+\setcounter{page}{1}
+\setcurdir{Math}
+\include{Math/main}
+
+\setcurdir{String}
+\include{String/main}
+
+\setcurdir{Data-Structure}
+\include{Data-Structure/main}
+
+\setcurdir{Graph}
+\include{Graph/main}
+
+\setcurdir{CG}
+\include{CG/main}
+
+%\setcurdir{DP}
+%\include{DP/main}
+
+\setcurdir{misc}
+\include{misc/main}
+
+\include{test}
+
+
+\end{document}

@@ -1,0 +1,68 @@
+
+\section{Graph 图论}
+
+\subsection{特殊图性质}
+
+\paragraph{竞赛图:} 基图为无向完全图的有向简单图。
+
+\begin{compactenum}
+	\item 竞赛图强连通缩点后的DAG呈链状, 前面的所有点向后面的所有点连边。
+	\item 任意竞赛图都有哈密顿路径；存在哈密顿回路当且仅当强联通。
+  \item 竞赛图中大小为 $n$ 的强联通子图中存在大小为 $[3, n]$ 的环。
+  \item 兰道定理(Landau's Theoerm): 
+  不降序列$\{s_n\}$是合法的比分序列（即竞赛图的出度序列）当且仅当
+  \(\forall 1 \leqslant k \leqslant n, \sum\limits_{i = 1}^{k}s_i \leqslant \tbinom{k}{2}\)，
+  且$\sum\limits_{i = 1}^n s_i = \tbinom{n}{2}$。
+\end{compactenum}
+
+\subsection{SP 最短路 Shortest Path}
+
+Johnson 全源最短路 —— 任意图，复杂度 $\BigO(N^2 + N M \log M)$.
+
+\cppinputlisting{Johnson}
+
+\subsection{MST 最小生成树 Minimal Spanning Tree}
+
+\subsubsection{矩阵树定理 Kirchhoff's matrix tree theorem}
+
+\noindent the Laplacian matrix $L$ $=$ the degree matrix $D$ $-$ the adjacency matrix $A$. the number of spanning trees $=$ the absolute value of any cofactor of $L$.
+
+\subsubsection{Kruskal（可判定唯一性）}
+
+\cppinputlisting{MST/Kruskal}
+
+\subsubsection{Prim}
+
+\cppinputlisting{MST/Prim}
+
+\subsubsection{Boruvka}
+
+须保证：对于每个连通块，都能够找到与之距离最小的另一联通块。记对于一轮这一过程复杂度为 $O(p)$，那么最终的复杂度为 $O(p \log n)$. 
+
+\subsubsection{XOR-MST 最小异或生成树}
+
+可借助 字典树 用 Boruvka 算法求解，复杂度 $\BigO(n \log n \log a_i)$.
+
+也可以对 字典树 dfs求解，复杂度 $\BigO(n \log \max(n, a_i))$.
+
+\cppinputlisting{MST/xormst}
+
+\subsection{网络流 Net Flow}
+
+\cppinputlisting{NetFlow/Dinic}
+
+\subsection{XX连通分量 XX-Connected Component}
+
+\cppinputlisting{Tarjan-E-BCC}
+
+\cppinputlisting{Tarjan-V-BCC}
+
+\cppinputlisting{kosaraju}
+
+\subsection{树の剖分 Decomposition}
+
+\cppinputlisting{Heavy-Light-Decomposition}
+
+\subsection{支配树 Dominator Tree}
+
+\cppinputlisting{Dominator}

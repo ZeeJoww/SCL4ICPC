@@ -1,0 +1,56 @@
+
+\section{String 字符串}
+
+\subsection{String-Match 字符串匹配}
+
+\subsubsection{KMP}
+
+\cppinputlisting{KMP}
+
+\subsubsection{Z function}
+
+$z_i = \max_{j} ~ s.\text{substr}(0, j) = s.\text{substr}(i, j)$
+
+\cppinputlisting{Z-Function}
+
+\subsubsection{AC 自动机}
+
+\cppinputlisting{AC-Automaton}
+
+\subsubsection{BM}
+
+\cppinputlisting{Boyer-Mooer}
+
+\subsubsection{后缀数组}
+
+\cppinputlisting{SA}
+
+\subsubsection{后缀自动机}
+
+\cppinputlisting{SAM}
+
+还有广义后缀自动机（多模串）
+
+\cppinputlisting{extsam}
+
+\subsection{misc}
+
+\subsubsection{回文串}
+
+\cppinputlisting{Manacher}
+
+\noindent Palindromic Tree 回文树（回文自动机）
+
+\cppinputlisting{PAM}
+
+\subsubsection{Lyndon 分解 - Duval 算法}
+
+Lyndon 串：字典序严格小于自身所有非平凡后缀的字符串。
+
+Lyndon 分解： $s = w_1 + \cdots + w_k$，其中 $w_i$ 是 Lyndon 串且 $w_1 \geqslant \cdots \geqslant w_k$.
+
+\cppinputlisting{Lyndon}
+
+\subsubsection{最小表示法}
+
+\cppinputlisting{minimal-cyclic-shift}

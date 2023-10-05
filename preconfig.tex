@@ -1,0 +1,382 @@
+% preconfig.tex 
+% 导言区,加载宏包和各项设置,包括参考文献、索引等
+
+
+% 实用package
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{enumerate}
+\usepackage{amsthm,amsmath}
+%\usepackage{fouriernc}
+\usepackage{color}
+\usepackage{paralist}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[all,pdf]{xy} % xymatrix command
+\usepackage{tikz}
+%\usepackage{tikz-3dplot}
+%\usepackage[latin1]{inputenc}
+\usetikzlibrary{patterns}
+\usepackage{makecell}
+\usepackage[hidelinks]{hyperref}
+\usepackage[super,square,comma,sort&compress]{natbib}
+\usepackage{times}
+\usepackage{verbatim}
+%\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols,quotes,angles,through}
+\usepackage{pgfplots}
+\usepackage[siunitx]{circuitikz} % Loading circuitikz with siunitx option
+
+%\punctstyle{banjiao}
+%\catcode`\。=\active
+%\newcommand{。}{\ifmmode\text{．}\else ．\fi}\textbf{}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{svg}
+\usepackage{gbt7714}
+\bibliographystyle{gbt7714-numerical}
+
+
+\usepackage{latexsym,bm}        % 处理数学公式中和黑斜体的宏包
+\usepackage{gensymb}
+\usepackage{amsmath,amssymb}    % AMSLaTeX宏包 用来排出更加漂亮的公式
+\makeatletter
+\renewcommand\normalsize{
+ \abovedisplayskip 2\p@ \@plus1\p@ \@minus6\p@
+ \abovedisplayshortskip \z@ \@plus3\p@
+ \belowdisplayshortskip 5\p@ \@plus3\p@ \@minus3\p@
+ \belowdisplayskip \abovedisplayskip
+ \let\@listi\@listI}
+\makeatother
+
+\usepackage{chngcntr}
+%\counterwithin{figure}{section}
+%\counterwithin{table}{section}
+%\counterwithin{equation}{section}
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+
+% 字号命令表
+% 七号 　　5.25pt 　　1.845mm　　　　\tiny
+% 六号 　　7.875pt 　2.768mm　　　　\scriptsize
+% 小五   9pt 　　　　 3.163mm　　　　\footnotesize
+% 五号 　　10.5pt   3.69mm　　　　 \small
+% 小四   12pt 　　　 4.2175mm　　　\normalsize
+% 四号 　　13.75pt 　4.83mm　　　　 \large
+% 三号 　　15.75pt 　5.53mm　　　　 \Large
+% 二号 　　21pt 　　　　7.38mm     \LARGE
+% 一号 　　27.5pt 　　9.48mm　　　　 \huge
+% 小初   36pt 　　 　12.65mm　　　　\Huge
+% 初号 　　42pt 　　　　14.76mm　
+% 
+% 更好记的便捷命令:
+% \zihao{4}  四号
+% \zihao{-4} 小四号
+
+\addtolength{\parskip}{.2em}
+%%\setlength{\parskip}{.1em}
+%\addtolength{\lineskip}{-.1em}
+%\addtolength{\baselineskip}{-.1em}
+
+% 字体 fonts
+\usepackage{fouriernc}
+\usepackage{ctex} % already set by ctexart. 
+\newfontfamily\timesnew{Times New Roman}[AutoFakeBold]
+\newfontfamily\monacoff{Monaco}[AutoFakeBold] % 一般代码字体
+\newfontfamily\consolff{Consolas}[AutoFakeBold] % another code font
+\newfontfamily\atitleff{方正粗黑宋简体}[AutoFakeBold] % title font
+\newfontfamily\btitleff{方正粗黑宋简体}[AutoFakeBold] % title font
+\newfontfamily\ctitleff{Lucida Calligraphy}[AutoFakeBold] % title font
+\newfontfamily\cntextff{方正粗黑宋简体}[AutoFakeBold] % text font
+\newfontfamily\ttitleff{方正粗黑宋简体}[AutoFakeBold] % text font
+
+\usepackage[titles,subfigure]{tocloft}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+
+\ctexset{
+	section={
+		%format用于设置章节标题全局格式,作用域为标题和编号
+		%字号为四号,字体为黑体(居中是默认的)
+		%+号表示在原有格式下附加格式命令
+		format = {\bfseries \zihao{-2} \atitleff},
+%    number = \chinese{section},
+%    name = {,\quad},
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+    aftername = \hspace{16pt}
+	},
+	subsection={
+		format+ = \zihao{4} \btitleff,
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+    aftername = \hspace{8pt}
+	},
+	subsubsection={
+		format+ = \zihao{-4} \btitleff,
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+    aftername = \hspace{6pt}
+	},
+	paragraph={
+		format+ = \zihao{-4} \btitleff,
+    number = \alph{paragraph},
+		name = {,.},
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+    aftername = \hspace{0pt}
+	},
+	tablename=\bfseries \btitleff 表,
+	figurename=\bfseries \btitleff 图,
+}
+
+\titlespacing{\section}{0pt}{1ex plus .2ex minus .2ex}{.5ex plus .2ex minus .2ex}
+\titlespacing{\subsection}{0pt}{1ex plus .2ex minus .2ex}{.5ex plus .2ex minus .2ex}
+\titlespacing{\subsubsection}{0pt}{1ex plus .2ex minus .2ex}{.5ex plus .2ex minus .2ex}
+\titlespacing{\paragraph}{0pt}{1ex plus .2ex minus .2ex}{.5ex plus .2ex minus .2ex}
+%\titleformat{\section}{}{}{}{1em}{1em}
+\linespread{1.15} % 1.1倍行距
+
+
+% 版面设置(页眉、页脚、间距)
+
+% A4,上下各留20mm
+\usepackage[a4paper]{geometry}
+\geometry{left=3.20cm,right=3.20cm,top=2.4cm,bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\cfoot{\consolff \thepage}
+\usepackage{graphicx}
+\graphicspath{{./figures}}
+
+% 摘要环境
+
+% 自定义命令 free style / user define / (re)newcommand / ref / 
+% 摘要 abstract 
+\newcommand{\titlehere}{
+	\begin{center}
+		\textbf{\fontsize{14pt}{\baselineskip}\mytitle} % ~\\[1pt] ~\\
+	\end{center}
+}
+% 环境定义
+%\newenvironment{cnabstract
+%	\par\zihao{3}
+%	\noindent\mbox{}\hfill{\bfseries \cntitle}\hfill\mbox{}\par \vskip 1ex
+%	\par\zihao{-3}
+%	\noindent\mbox{}\hfill{\bfseries \cnabstractname}\hfill\mbox{}\par
+%	\normalsize \vskip 1.5ex}{\par}
+%
+%% 标题
+%\newcommand{\cnabstractname}{摘要}
+\bibliographystyle{plain} % 指定参考文献样式为plain
+
+\newcommand{\eqnref}[1]{ (\ref{#1})\,}
+\newcommand{\coderef}[1]{源代码\ref{#1}}
+%\titleformat{\chapter}{color{green}\titlerule[2pt] \color{black} \centering\Huge\bfseries}{}{0em}{}
+\usepackage{etoolbox}
+\usepackage{enumitem}
+\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)
+    circle (.5em) node {\makebox[1em][c]{\small #1}};}}
+\robustify{\circled}
+
+
+% refs
+\usepackage{blindtext}
+\usepackage{nameref}
+
+\newcounter{mylabelcounter}
+
+\makeatletter
+\newcommand{\labeltext}[2]{%
+#1\refstepcounter{mylabelcounter}%
+\immediate\write\@auxout{%
+  \string\newlabel{#2}{{1}{\thepage}{{\unexpanded{#1}}}{mylabelcounter.\number\value{mylabelcounter}}{}}%
+}%
+}
+\makeatother
+
+
+
+% for codes
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{palatino}
+\usepackage{fontenc}
+\usepackage{inputenc}
+%\usepackage{minted}
+
+\usepackage[normalem]{ulem} % use normalem to protect \emph
+\newcommand\hl[1]{\bgroup\markoverwith{\textcolor{#1}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon}
+\newcommand{\grayset}[1]{\hl{gray!60}{~~}\hl{gray!15}{~~\\~~#1~~\\}}
+
+\newcommand{\graybox}[1]{
+\noindent
+\hl{gray!60}{~}
+\colorbox{gray!20}{%
+\parbox{\linewidth-0\fboxsep}{%
+\setlength{\parindent}{2em}#1}}
+}
+
+\newcommand{\grayitem}[1]{
+\graybox{\noindent \quad $\bullet$ \ #1}
+}
+
+\newcommand{\graylist}[1]{\graybox{\begin{itemize}
+\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}
+#1\end{itemize}}}
+\usepackage{xcolor}
+\definecolor{commentColor}{RGB}{53,129,34}
+\definecolor{keywordColor}{RGB}{172, 62, 158}
+\definecolor{stringColor}{RGB}{194, 62, 42}
+\definecolor{preprocessorColor}{RGB}{114, 75, 48}
+\definecolor{characterColor}{RGB}{31, 53, 207}
+\definecolor{numberColor}{RGB}{166, 166, 166}
+\definecolor{oglobalColor}{RGB}{97, 64, 154}
+\definecolor{globalColor}{RGB}{89, 127, 134}
+\definecolor{functionColor}{RGB}{0, 0, 255}
+
+\lstnewenvironment{cpplist}
+{\lstset{language=C++,
+        frame=lines,
+        lineskip=-1.5pt,
+        basicstyle=\consolff\zihao{-5},
+        keywordstyle=\color{keywordColor}\consolff\bfseries\zihao{-5},
+        commentstyle=\color{commentColor}\consolff,
+        stringstyle=\color{stringColor}\consolff,
+        showstringspaces=false,
+        columns=fullflexible,keepspaces,
+        numbers=left,
+        numberstyle=\color{numberColor}\footnotesize\consolff,
+        keywords={[2]{hadfgsdgersvesvr}},
+        keywordstyle={[2]{\color{oglobalColor}\consolff}},
+        keywords={[3]{endl, printf, scanf, setw, setfill, setbase, setprecision, time, ctime, rand, std, assert, isalnum, isalpha, isblank, iscntrl, isdigit, isgraph, islower, isprint, ispunct, isspace, isupper, isxdigit, tolower, toupper, errno, cos, sin, tan, acos, asin, atan, atan2, cosh, sinh, tanh, acosh, asinh, atanh, exp, frexp, ldexp, log, log10, modf, exp2, log2, logb, pow, sqrt, cbrt, ceil, floor, fmod, trunc, round, rint, copysign, nan, fdim, fmax, fmin, fabs, abs, isfinate, isinf, isnan, isnormal, signbit, INFINITY, NAN, double_t, float_t, remove, rename, tmpfile, tmpnam, fclose, fflush, fopen, freopen, setbuf, setvbuf, fprintf, fscanf, printf, scanf, snprintf, sprintf, sscanf, vfprintf, vfscanf, yprintf, vscanf, vsnprintf, vsprintf, vsscanf, fgetc, fgets, fputc, fputs, getc, getchar, gets, putc, putchar, puts, ungetc, fread, fwrite, fgetpos, fseek, fsetpos, ftell, rewind, clearerr, feof, ferror, perror, EOF, BUFSIZ, FILENAME_MAX, FOPEN_MAX, L_tmpnam, NULL, TMP_MAX, FILE, fpos_t, size_t, atof, atoi, ato, atoll, strtod, strtof, strtol, strtold, strtoll, strtoul, strtoull, rand, srand, calloc, free, malloc, realloc, abort, atexit, at_quick_exit, exit, getenv, quick_exit, system, _Exit, bsearch, qsort, abs, div, labs, div, llabs, lldiv, mblen, mbtowc, wctomb, mbstowcs, wcstombs, EXIT_FAILURE, EXIT_SUCCESS, MB_CUR, MAX, NULL, RAND_MAX, ldiv_t, lldiv_t, size_t, memcpy, memmove, strcpy, strncpy, strcat, strncat, memcmp, strcmp, strcoll, strncmp, strxfrm, memchr, strchr, strcspn, strpbrk, strrchr, strspn, strstr, strtok, memset, strerror, strlen, clock, difftime, mktime, time, asctime, ctime, gmtime, localtime, strftime, CLOCKS_PER_SEC, clock_t, time_t, array, begin, end, rbegin, rend, cbegin, cend, crbegin, crend, size, max_size, empty, at, front, top, back, data, fill, swap, get, tuple_element, tuple_size, deque, resize, shrink_to_fit, assign, push_back, push_front, pop_back, pop_front, insert, erase, clear, emplace, emplace_front, emplace_back, get_allocator, forward_list, emplace_front, push_front, pop_front, emplace_after, insert_after, erase_after, splice_after, remove, remove_if, unique, merge, sort, reverse, list, map, multimap, emplace_hint, key_comp, value_comp, find, count, lower_bound, upper_bound, equal_range, queue, priority_queue, push, emplace, pop, uses_allocator, ranges, set, multiset, stack, unordered_map, unordered_multimap, bucket_count, max_bucket_count, bucket_size, bucket, load_factor, max_load_factor, rehash, reserve, hash_function, key_eq, key_type, mapped_type, value_type, hasher, key_equal, allocator_type, reference, const_reference, pointer, const_pointer, iterator, reverse_iterator, const_iterator, local_iterator, const_local_iterator, size_type, difference_type, allocator_traits, forward_iterator, pair, unordered_set, unordered_multiset, random_access_iterator_tag, random_access_iterator, input_iterator_tag, input_iterator, output_iterator_tag, output_iterator, forward_iterator_tag, bidirectional_iterator_tag, bidirectional_iterator, capacity, at, const_reverse_iterator, ptrdiff_t, flip, hash, noexcept, basic_ifstream, basic_ofstream, basic_fstream, basic_filebuf, ifstream, ofstream, fstream, filebuf, wifstream, wofstream, wfstream, wfilebuf, event, event_callback, failure, fmtflags, Init, iostate, openmode, seekdir, sentry, open, is_open, close, rdbuf, gcount, getline, ignore, peek, read, readsome, putback, unget, tellg, seekg, sync, good, eof, fail, bad, rdstate, setstate, copyfmt, fill, exceptions, imbue, tie, rdbuf, narrow, widen, flags, setf, unsetf, precision, width, imbue, getloc, xalloc, iword, pword, register_callback, sync_with_stdio, pubimbue, getloc, pubsetbuf, pubseekoff, pubseekpos, pubsync, in_avail, snextc, sbumpc, sgetc, sgetn, sputbackc, sungetc, sputc, sputn, showmanyc, underflow, uflow, pbackfail, overflow, setbuf, seekoff, seekpos, setiosflags, resetiosflags, setbase, setfill, setprecision, setw, get_money, put_money, get_time, put_time, ios, ios_base, boolalpha, showbase, showpoint, showpos, skipws, unitbuf, uppercase, dec, hex, oct, fixed, scientific, internal, left, right, internal, eofbit, failbit, badbit, put_time, setw, setfill, setbase, setprecision, noboolalpha, noshowbase, noshowpoint, noshowpos, noskipws, nounitbuf, nouppercase, iostream_category, basic_ios, basic_streambuf, basic_istream, basic_ostream, basic_iostream, basic_stringbuf, basic_istringstream, basic_ostringstream, basic_stringstream, basic_filebuf, basic_ifstream, basic_ofstream, basic_fstream, istreambuf_iterator, ostreambuf_iterator, ios, streambuf, istream, ostream, iostream, stringbuf, istringstream, ostringstream, stringstream, filebuf, ifstream, ofstream, fstream, wios, wstreambuf, wistream, wostream, wiostream, wstringbuf, wistringstream, wostringstream, wstringstream, wfilebuf, wifstream, wofstream, wfstream, streampos, wstreampos, cin, cout, cerr, clog, wcin, wcout, wcerr, wclog, istream, iostream, ws, endl, ends, flush, atomic, atomic_flag, memory_order, all_of, copy, copy_n, copy_if, copy_backward, move, move_backward, swap, swap_ranges, iter_swap, transform, replace, replace_if, replace_copy, replace_copy_if, fill, fill_n, generate, generate_n, remove, remove_if, remove_copy, remove_copy_if, unique, unique_copy, reverse, reverse_copy, rotate, rotate_copy, random_shuffle, is_partitioned, partition, stable_partition, partition_copy, partition_point, shuffle, any_of, none_of, for_each, find, find_if, find_if_not, find_end, find_first_of, adjacent_find, count, count_if, mismatch, equal, is_permutation, search, sort, stable_sort, partial_sort, partial_sort_copy, is_sorted, is_sorted_until, nth_element, lower_bound, upper_bound, equal_range, binary_search, merge, inplace_merge, includes, set_union, set_intersection, set_difference, set_symmetric_difference, push_heap, pop_heap, make_heap, sort_heap, is_heap, is_heap_until, min, max, minmax, min_element, max_element, minmax_element, lexicographical_compare, next_permutation, prev_permutation, search_n, bitset, chrono, test, any, none, all, reset, to_string, to_ulong, to_ullong, duration, time_point, system_clock, steady_clock, high_resolution_clock, treat_as_floating_point, duration_values, common_type, duration_cast, time_point_cast, huors, minutes, seconds, milliseconds, microseconds, nanoseconds, codecvt_mode, codecvt_utf8, codecvt_utf16, codecvt_utf8_utf16, complex, real, imag, abs, arg, horm, conj, polar, cos, cosh, exp, log, log10, pow, sin, sinh, sqrt, tan, tanh, acos, acosh, asin, asinh, atan, atanh, proj, bind, cref, mem_fn, not1, not2, ref, binary_negate, function, reference_wrapper, bit_and, bit_or, bit_xor, divides, equal_to, greater, greater_equal, less, less_equal, logical_and, logical_not, logical_or, minus, modulus, multiplies, negate, not_equal_to, plus, bad_function_call, hash, is_bind_expression, is_placeholder, placeholders, unary_negate, initializer_list, prev, next, advance, distance, back_inserter, front_inserter, inserter, make_move_iterator, move_iterator, back_insert_iterator, front_insert_iterator, insert_iterator, numeric_limits, float_round_style, float_denorm_style, new, delete, bad_alloc, bad_array_new_length, new_handler, nothrow_t, nothrow, accumulate, adjacent_difference, inner_product, partial_sum, iota, gcd, lcm, defaut_random_engine, minstd_rand, minstd_rand0, mt19937, mt19937_64, random_device, uniform_int_distribution, uniform_real_distribution, bernoulli_distribution, binomial_distribution, geometric_distribution, negative_binomial_distribution, poisson_distribution, exponential_distribution, gamma_distribution, weibull_distribution, extreme_value_distribution, normal_distribution, lognormal_distribution, chi_squared_distribution, cauchy_distribution, fisher_f_distribution, student_t_distribution, discrete_distribution, piecewise_constant_distribution, piecewise_linear_distribution, seed_seq, generate_canonical, ratio, ratio_add, ratio_subtract, ratio_multiply, ratio_divide, ratio_equal, ratio_not_equal, ratio_less, ratio_less_equal, ratio_greater, ratio_greater_equal, logic_error, domain_error, invalid_argument, length_error, out_of_range, runtime_error, range_error, overflow_error, underflow_error, basic_string, char_traits, string, u16string, u32string, wstring, stoi, stol, stoul, stoll, stoull, stof, stod, stold, append, c_str, data, get_allocator, copy, find, rfind, find_first_of, find_last_of, find_first_not_of, find_last_not_of, substr, compare, npos, getline, tuple, tuple_size, tuple_element, make_tuple, make_pair, forward_as_tuple, tuple_cat, is_array, is_class, is_enum, is_floating_point, is_function, is_integral, is_lvalue_reference, is_member_function_pointer, is_member_object_pointer, is_pointer, is_rvalue_reference, is_union, is_void, is_arithmetic, is_compound, is_fundamental, is_member_pointer, is_object, is_reference, is_scalar, is_abstract, is_const, is_empty, is_literal_type, is_pod, is_polymorphic, is_signed, is_standard_layout, is_trivial, is_trivially_copyable, is_unsigned, is_volatile, is_base_of, is_convertible, is_same, alignment_of, extent, rank, add_const, add_cv, add_volatile, remove_const, remove_cv, remove_volatile, add_pointer, add_lvalue_reference, add_rvalue_reference, decay, make_signed, make_unsigned, remove_all_extents, remove_extent, remove_pointer, remove_reference, underlying_type, aligned_storage, aligned_union, common_type, conditional, enable_if, result_of, true_type, false_type, integral_constant, type_index, type_info, bad_cast, bad_typeid, before, name, hash_code, forward, move, move_if_noexcept, declval, piecewise_construct_t, piecewise_construct, copy, fill, array, valarray, slice, gslice, slice_array, gslice_array, mask_array, indirect_array, abs, acos, asin, atan, atan2, cos, cosh, exp, log, log10, pow, sin, sinh, sqrt, tan, tanh, apply, cshift, vector, cassert, assert.h, cctype, ctype.h, cerrno, errno.h, cfloat, float.h, ciso646, iso646.h, climits, limits.h, clocale, locale.h, cmath, math.h, csetjmp, setjmp.h, csignal, signal.h, cstdarg, stdarg.h, cstdbool, stdbool.h, cstddef, stddef.h, cstdint, stdint.h, cstdio, stdio.h, cstdlib, stdlib.h, cstring, string.h, ctime, time.h, cuchar, uchar.h, cwchar, wchar.h, cwctype, wctype.h, fstream, iomanip, ios, iosfwd, iostream, istream, ostream, sstream, streambuf, atomic, future, mutex, thread, condition_variable, algorithm, bitset, chrono, codecvt, complex, exception, functional, initializer_list, iterator, limits, locale, memory, new, numeric, random, ratio, regex, stdexcept, string, system_error, tuple, type_traits, typeindex, typeinfo, utility, valarray, int64, int64_t, int128, __int128, __int128_t, constexpr, nullptr, convex, point, Point, Circle, Line, line, QuadEdge, vec3, poly}},
+        keywordstyle={[3]{\color{functionColor}\consolff}},
+        keywords={[4]{\#include}},
+        keywordstyle={[4]{\color{preprocessorColor}\consolff}},
+        tabsize=4}
+}{}
+
+
+\lstnewenvironment{py3list}
+{\lstset{language=Python,
+  lineskip=-1.5pt,
+  frame=lines,
+  basicstyle=\consolff\zihao{-5},
+  keywordstyle=\bfseries\zihao{-5}\color{blue},
+  commentstyle=\color{gray},
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\color{numberColor}\footnotesize\consolff,
+  escapeinside=``}
+}{}
+%\newlist{question}{enumerate}{1}
+%\setlist[question,1]{itemsep = 0pt, parsep = 0pt, align=left, leftmargin=*, label = {\bfseries 问题\chinese*}} 
+
+
+\newcommand{\modcase}[1]{~\left(\text{mod~}#1\right)}
+\newcommand{\modm}{\modcase{m}}
+\newcommand{\modp}{\modcase{p}}
+\newcommand{\BigO}{\mathcal{O}}
+
+
+% for todo list
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+% for check symbol 
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\item[\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}\hspace{-2.5pt}]}
+\newcommand{\nofix}{\item[\rlap{$\square$}{\large\hspace{1pt}\xmark}]}
+
+% for animation 
+\usepackage{animate,media9,graphicx}
+
+
+% some notes maybe 
+%\begin{picture}(1,1)  \put(75,-55){\includegraphics[width=4cm]{img20120825184521}}  
+%\end{picture}
+
+
+\renewcommand{\contentsname}{{\ttitleff \zihao{1} Contents 目录}}
+\renewcommand{\baselinestretch}{1.2} % 调整行距为1.2倍标准行距
+\renewcommand{\cftsecleader}{\cftdotfill{0.8}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{0.8}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{1.0}}
+\renewcommand{\cftsecfont}{\bfseries\btitleff} 
+\renewcommand{\cftsubsecfont}{\btitleff\bfseries} 
+\renewcommand{\cftsubsubsecfont}{\btitleff}
+\renewcommand{\cftsecpagefont}{\bfseries\btitleff}
+\renewcommand{\cftsubsecpagefont}{\btitleff\bfseries}
+\renewcommand{\cftsubsubsecpagefont}{\btitleff}
+
+
+% for algorithm 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}} 
+
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定义}
+\renewcommand{\thetheorem}{\consolff \bfseries \arabic{theorem}}
+\renewcommand{\thelemma}{\consolff \bfseries \arabic{lemma}}
+\renewcommand{\thedefinition}{\consolff \bfseries \arabic{definition}}
+
+\newenvironment{cnproof}{\begin{proof}[\bfseries 证明]}{\end{proof}}
+
+\newcommand{\dirname}{.}
+\newcommand{\cppinputlisting}[1]{
+\noindent $\star$ #1.cpp
+\lstinputlisting[language=C++,
+frame=lines,
+lineskip=-1.5pt,
+basicstyle=\consolff\zihao{-5},
+keywordstyle=\color{keywordColor}\consolff\bfseries\zihao{-5},
+commentstyle=\color{commentColor}\consolff,
+stringstyle=\color{stringColor}\consolff,
+showstringspaces=false,
+columns=fullflexible,keepspaces,
+numbers=left,
+numberstyle=\color{numberColor}\footnotesize\consolff,
+keywords={[2]{std, assert, isalnum, isalpha, isblank, iscntrl, isdigit, isgraph, islower, isprint, ispunct, isspace, isupper, isxdigit, tolower, toupper, errno, cos, sin, tan, acos, asin, atan, atan2, cosh, sinh, tanh, acosh, asinh, atanh, exp, frexp, ldexp, log, log10, modf, exp2, log2, logb, pow, sqrt, cbrt, ceil, floor, fmod, trunc, round, rint, copysign, nan, fdim, fmax, fmin, fabs, abs, isfinate, isinf, isnan, isnormal, signbit, INFINITY, NAN, double_t, float_t, remove, rename, tmpfile, tmpnam, fclose, fflush, fopen, freopen, setbuf, setvbuf, fprintf, fscanf, printf, scanf, snprintf, sprintf, sscanf, vfprintf, vfscanf, yprintf, vscanf, vsnprintf, vsprintf, vsscanf, fgetc, fgets, fputc, fputs, getc, getchar, gets, putc, putchar, puts, ungetc, fread, fwrite, fgetpos, fseek, fsetpos, ftell, rewind, clearerr, feof, ferror, perror, EOF, BUFSIZ, FILENAME_MAX, FOPEN_MAX, L_tmpnam, NULL, TMP_MAX, FILE, fpos_t, size_t, atof, atoi, ato, atoll, strtod, strtof, strtol, strtold, strtoll, strtoul, strtoull, rand, srand, calloc, free, malloc, realloc, abort, atexit, at_quick_exit, exit, getenv, quick_exit, system, _Exit, bsearch, qsort, abs, div, labs, div, llabs, lldiv, mblen, mbtowc, wctomb, mbstowcs, wcstombs, EXIT_FAILURE, EXIT_SUCCESS, MB_CUR, MAX, NULL, RAND_MAX, ldiv_t, lldiv_t, size_t, memcpy, memmove, strcpy, strncpy, strcat, strncat, memcmp, strcmp, strcoll, strncmp, strxfrm, memchr, strchr, strcspn, strpbrk, strrchr, strspn, strstr, strtok, memset, strerror, strlen, clock, difftime, mktime, time, asctime, ctime, gmtime, localtime, strftime, CLOCKS_PER_SEC, clock_t, time_t, array, begin, end, rbegin, rend, cbegin, cend, crbegin, crend, size, max_size, empty, at, front, top, back, data, fill, swap, get, tuple_element, tuple_size, deque, resize, shrink_to_fit, assign, push_back, push_front, pop_back, pop_front, insert, erase, clear, emplace, emplace_front, emplace_back, get_allocator, forward_list, emplace_front, push_front, pop_front, emplace_after, insert_after, erase_after, splice_after, remove, remove_if, unique, merge, sort, reverse, list, map, multimap, emplace_hint, key_comp, value_comp, find, count, lower_bound, upper_bound, equal_range, queue, priority_queue, push, emplace, pop, uses_allocator, ranges, set, multiset, stack, unordered_map, unordered_multimap, bucket_count, max_bucket_count, bucket_size, bucket, load_factor, max_load_factor, rehash, reserve, hash_function, key_eq, key_type, mapped_type, value_type, hasher, key_equal, allocator_type, reference, const_reference, pointer, const_pointer, iterator, reverse_iterator, const_iterator, local_iterator, const_local_iterator, size_type, difference_type, allocator_traits, forward_iterator, pair, unordered_set, unordered_multiset, random_access_iterator_tag, random_access_iterator, input_iterator_tag, input_iterator, output_iterator_tag, output_iterator, forward_iterator_tag, bidirectional_iterator_tag, bidirectional_iterator, capacity, at, const_reverse_iterator, ptrdiff_t, flip, hash, noexcept, basic_ifstream, basic_ofstream, basic_fstream, basic_filebuf, ifstream, ofstream, fstream, filebuf, wifstream, wofstream, wfstream, wfilebuf, event, event_callback, failure, fmtflags, Init, iostate, openmode, seekdir, sentry, open, is_open, close, rdbuf, gcount, getline, ignore, peek, read, readsome, putback, unget, tellg, seekg, sync, good, eof, fail, bad, rdstate, setstate, copyfmt, fill, exceptions, imbue, tie, rdbuf, narrow, widen, flags, setf, unsetf, precision, width, imbue, getloc, xalloc, iword, pword, register_callback, sync_with_stdio, pubimbue, getloc, pubsetbuf, pubseekoff, pubseekpos, pubsync, in_avail, snextc, sbumpc, sgetc, sgetn, sputbackc, sungetc, sputc, sputn, showmanyc, underflow, uflow, pbackfail, overflow, setbuf, seekoff, seekpos, setiosflags, resetiosflags, setbase, setfill, setprecision, setw, get_money, put_money, get_time, put_time, ios, ios_base, boolalpha, showbase, showpoint, showpos, skipws, unitbuf, uppercase, dec, hex, oct, fixed, scientific, internal, left, right, internal, eofbit, failbit, badbit, put_time, setw, setfill, setbase, setprecision, noboolalpha, noshowbase, noshowpoint, noshowpos, noskipws, nounitbuf, nouppercase, iostream_category, basic_ios, basic_streambuf, basic_istream, basic_ostream, basic_iostream, basic_stringbuf, basic_istringstream, basic_ostringstream, basic_stringstream, basic_filebuf, basic_ifstream, basic_ofstream, basic_fstream, istreambuf_iterator, ostreambuf_iterator, ios, streambuf, istream, ostream, iostream, stringbuf, istringstream, ostringstream, stringstream, filebuf, ifstream, ofstream, fstream, wios, wstreambuf, wistream, wostream, wiostream, wstringbuf, wistringstream, wostringstream, wstringstream, wfilebuf, wifstream, wofstream, wfstream, streampos, wstreampos, cin, cout, cerr, clog, wcin, wcout, wcerr, wclog, istream, iostream, ws, endl, ends, flush, atomic, atomic_flag, memory_order, all_of, copy, copy_n, copy_if, copy_backward, move, move_backward, swap, swap_ranges, iter_swap, transform, replace, replace_if, replace_copy, replace_copy_if, fill, fill_n, generate, generate_n, remove, remove_if, remove_copy, remove_copy_if, unique, unique_copy, reverse, reverse_copy, rotate, rotate_copy, random_shuffle, is_partitioned, partition, stable_partition, partition_copy, partition_point, shuffle, any_of, none_of, for_each, find, find_if, find_if_not, find_end, find_first_of, adjacent_find, count, count_if, mismatch, equal, is_permutation, search, sort, stable_sort, partial_sort, partial_sort_copy, is_sorted, is_sorted_until, nth_element, lower_bound, upper_bound, equal_range, binary_search, merge, inplace_merge, includes, set_union, set_intersection, set_difference, set_symmetric_difference, push_heap, pop_heap, make_heap, sort_heap, is_heap, is_heap_until, min, max, minmax, min_element, max_element, minmax_element, lexicographical_compare, next_permutation, prev_permutation, search_n, bitset, chrono, test, any, none, all, reset, to_string, to_ulong, to_ullong, duration, time_point, system_clock, steady_clock, high_resolution_clock, treat_as_floating_point, duration_values, common_type, duration_cast, time_point_cast, huors, minutes, seconds, milliseconds, microseconds, nanoseconds, codecvt_mode, codecvt_utf8, codecvt_utf16, codecvt_utf8_utf16, complex, real, imag, abs, arg, horm, conj, polar, cos, cosh, exp, log, log10, pow, sin, sinh, sqrt, tan, tanh, acos, acosh, asin, asinh, atan, atanh, proj, bind, cref, mem_fn, not1, not2, ref, binary_negate, function, reference_wrapper, bit_and, bit_or, bit_xor, divides, equal_to, greater, greater_equal, less, less_equal, logical_and, logical_not, logical_or, minus, modulus, multiplies, negate, not_equal_to, plus, bad_function_call, hash, is_bind_expression, is_placeholder, placeholders, unary_negate, initializer_list, prev, next, advance, distance, back_inserter, front_inserter, inserter, make_move_iterator, move_iterator, back_insert_iterator, front_insert_iterator, insert_iterator, numeric_limits, float_round_style, float_denorm_style, new, delete, bad_alloc, bad_array_new_length, new_handler, nothrow_t, nothrow, accumulate, adjacent_difference, inner_product, partial_sum, iota, gcd, lcm, defaut_random_engine, minstd_rand, minstd_rand0, mt19937, mt19937_64, random_device, uniform_int_distribution, uniform_real_distribution, bernoulli_distribution, binomial_distribution, geometric_distribution, negative_binomial_distribution, poisson_distribution, exponential_distribution, gamma_distribution, weibull_distribution, extreme_value_distribution, normal_distribution, lognormal_distribution, chi_squared_distribution, cauchy_distribution, fisher_f_distribution, student_t_distribution, discrete_distribution, piecewise_constant_distribution, piecewise_linear_distribution, seed_seq, generate_canonical, ratio, ratio_add, ratio_subtract, ratio_multiply, ratio_divide, ratio_equal, ratio_not_equal, ratio_less, ratio_less_equal, ratio_greater, ratio_greater_equal, logic_error, domain_error, invalid_argument, length_error, out_of_range, runtime_error, range_error, overflow_error, underflow_error, basic_string, char_traits, string, u16string, u32string, wstring, stoi, stol, stoul, stoll, stoull, stof, stod, stold, append, c_str, data, get_allocator, copy, find, rfind, find_first_of, find_last_of, find_first_not_of, find_last_not_of, substr, compare, npos, getline, tuple, tuple_size, tuple_element, make_tuple, make_pair, forward_as_tuple, tuple_cat, is_array, is_class, is_enum, is_floating_point, is_function, is_integral, is_lvalue_reference, is_member_function_pointer, is_member_object_pointer, is_pointer, is_rvalue_reference, is_union, is_void, is_arithmetic, is_compound, is_fundamental, is_member_pointer, is_object, is_reference, is_scalar, is_abstract, is_const, is_empty, is_literal_type, is_pod, is_polymorphic, is_signed, is_standard_layout, is_trivial, is_trivially_copyable, is_unsigned, is_volatile, is_base_of, is_convertible, is_same, alignment_of, extent, rank, add_const, add_cv, add_volatile, remove_const, remove_cv, remove_volatile, add_pointer, add_lvalue_reference, add_rvalue_reference, decay, make_signed, make_unsigned, remove_all_extents, remove_extent, remove_pointer, remove_reference, underlying_type, aligned_storage, aligned_union, common_type, conditional, enable_if, result_of, true_type, false_type, integral_constant, type_index, type_info, bad_cast, bad_typeid, before, name, hash_code, forward, move, move_if_noexcept, declval, piecewise_construct_t, piecewise_construct, copy, fill, array, valarray, slice, gslice, slice_array, gslice_array, mask_array, indirect_array, abs, acos, asin, atan, atan2, cos, cosh, exp, log, log10, pow, sin, sinh, sqrt, tan, tanh, apply, cshift, vector, cassert, assert.h, cctype, ctype.h, cerrno, errno.h, cfloat, float.h, ciso646, iso646.h, climits, limits.h, clocale, locale.h, cmath, math.h, csetjmp, setjmp.h, csignal, signal.h, cstdarg, stdarg.h, cstdbool, stdbool.h, cstddef, stddef.h, cstdint, stdint.h, cstdio, stdio.h, cstdlib, stdlib.h, cstring, string.h, ctime, time.h, cuchar, uchar.h, cwchar, wchar.h, cwctype, wctype.h, fstream, iomanip, ios, iosfwd, iostream, istream, ostream, sstream, streambuf, atomic, future, mutex, thread, condition_variable, algorithm, bitset, chrono, codecvt, complex, exception, functional, initializer_list, iterator, limits, locale, memory, new, numeric, random, ratio, regex, stdexcept, string, system_error, tuple, type_traits, typeindex, typeinfo, utility, valarray, int64, int128, __int128, __int128_t, constexpr, nullptr, convex, point, Point, Circle, Line, line, QuadEdge, vec3, poly}},
+keywordstyle={[2]{\color{functionColor}\consolff}},
+keywords={[3]{\#include, \#define, \#undef}},
+keywordstyle={[3]{\color{preprocessorColor}\consolff}},
+tabsize=4] {\dirname/code/#1.cpp}}
+
+\newcommand{\pyinputlisting}[1]{
+\noindent $\star$ #1.py
+\lstinputlisting[language=Python,
+lineskip=-1.5pt,
+frame=lines,
+basicstyle=\consolff\zihao{-5},
+keywordstyle=\color{blue}\bfseries\zihao{-5},
+commentstyle=\color{gray},
+showstringspaces=false,
+numbers=left] {\dirname/code/#1.py}}
+
+\newcommand{\setcurdir}[1]{\renewcommand{\dirname}{#1}}
+\newcommand{\resetcurdir}{\renewcommand{\dirname}{.}}

@@ -1,0 +1,150 @@
+
+\section{Math 数学}
+
+\subsection{Prime 素性}
+
+\subsubsection{大数的判素与分解}
+
+\cppinputlisting{Miller-Rabin}
+
+\cppinputlisting{Pollard-Rho}
+
+\pyinputlisting{prime}
+
+\subsubsection{筛法}
+
+能够$O(1)$计算素数$p$处值的积性函数均可使用\textbf{欧拉筛}在$O(n)$内预处理。
+
+若$f(x)$和$g(x)$均为积性函数，则以下函数也是积性函数：
+$$
+f(x^p), 
+\quad f^p(x), 
+\quad f(x)g(x), 
+\quad \displaystyle \sum_{d | x} 
+      f(d) g\left(\displaystyle \frac{x}{d}\right)
+$$
+
+%todo : to add definition and formula 
+
+欧拉函数前缀和（大数）
+
+\cppinputlisting{phi-presum-1e10}
+
+\subsubsection{莫比乌斯反演 mobius inversion}
+
+useful conclusion: $n = \sum\limits_{d | n} \varphi(d)$
+
+example: $\sum_{i = a}^{b} \sum_{j = c}^{d}[\gcd (i,j) = k]$
+
+\cppinputlisting{Mobius}
+
+\subsection{同余}
+
+\subsubsection{exgcd}
+
+\cppinputlisting{exgcd}
+
+\cppinputlisting{another-exgcd}
+
+\subsubsection{exCRT}
+
+\cppinputlisting{exCRT}
+
+\subsubsection{离散对数 (ex)bsgs}
+
+\cppinputlisting{bsgs-basic}
+
+\cppinputlisting{exbsgs}
+
+\subsection{多项式 Polynomial}
+
+\subsubsection{FFT/NTT}
+
+\cppinputlisting{FFT}
+
+\cppinputlisting{NTT}
+
+\subsection{组合数学 Conbinatorics}
+
+\cppinputlisting{fibonacci}
+
+\subsubsection{Polynomial (MOD 998244353)}
+
+\cppinputlisting{Poly}
+
+\subsection{MAGIC PRIMES}
+\begin{spacing}{0.9}
+\begin{tabular}[ht!]{cccc}
+\toprule
+$r~2^k+1$&$r$&$k$&$g$\\
+\midrule
+3&1&1&2\\
+5&1&2&2\\
+17&1&4&3\\
+97&3&5&5\\
+193&3&6&5\\
+257&1&8&3\\
+7681&15&9&17\\
+12289&3&12&11\\
+40961&5&13&3\\
+65537&1&16&3\\
+786433&3&18&10\\
+5767169&11&19&3\\
+7340033&7&20&3\\
+23068673&11&21&3\\
+104857601&25&22&3\\
+167772161&5&25&3\\
+469762049&7&26&3\\
+998244353&119&23&3\\
+1004535809&479&21&3\\
+2013265921&15&27&31\\
+2281701377&17&27&3\\
+3221225473&3&30&5\\
+75161927681&35&31&3\\
+77309411329&9&33&7\\
+206158430209&3&36&22\\
+2061584302081&15&37&7\\
+2748779069441&5&39&3\\
+6597069766657&3&41&5\\
+39582418599937&9&42&5\\
+79164837199873&9&43&5\\
+263882790666241&15&44&7\\
+1231453023109121&35&45&3\\
+1337006139375617&19&46&3\\
+3799912185593857&27&47&5\\
+4222124650659841&15&48&19\\
+7881299347898369&7&50&6\\
+31525197391593473&7&52&3\\
+180143985094819841&5&55&6\\
+1945555039024054273&27&56&5\\
+4179340454199820289&29&57&3\\
+\bottomrule
+\end{tabular}
+\end{spacing}
+
+\subsection{Notes}
+
+\begin{compactenum}[I.]
+\item 错排公式：$D(n) = (n-1)\left( D(n-1)+D(n-2) \right)$
+\item 牛顿迭代(poly)：
+\(
+g\left(f(x)\right) \equiv 0 \pmod{x^n} 
+\Rightarrow 
+f(x) \equiv f_0(x) - \frac{g\left(f_0(x)\right)}{g'\left(f_0(x)\right)}
+\pmod{x^n}‘
+\)
+\item 卡特兰数与路径计数
+  \begin{compactenum}[1.]
+    \item 第 $n$ 个卡特兰数 $H_n = \frac{1}{n + 1}\binom{2n}{n} = \frac{H_{n - 1}(4n - 2)}{n + 1}$.
+    \item 经典递推式 $H_n = \begin{cases}
+        \sum\limits_{i = 1}^{n} H_{i - 1} H_{n - i} & n \geqslant 2 \\
+        1 & n \in \{0, 1\}
+    \end{cases}$
+    \item 圆上 $2n$ 个点成对连接（$n$ 个匹配）不相交的方案数为 $H_n$.
+    \item 从 $(0, 0)$ 到 $(n, n)$ 的不穿过直线 $y = x$ 的非降路径数为 $\frac{2}{n + 1}\binom{2n}{n}$.
+    \item 从 $(0, 0)$ 到 $(n, n)$ 的除起点与终点外均不接触直线 $y = x$ 的非降路径数为 $2\binom{2n - 2}{n - 1} - 2\binom{2n - 2}{n}$.
+    \item 从 $(0, 0)$ 到 $(n, n)$ 的不穿过直线 $y = x - m$ ($m \geqslant 1$) 的非降路径数为 $\binom{2n}{n} - \binom{2n}{n - m - 1}$.
+    \item 从 $(0, 0)$ 到 $(n, m)$ ($n > m$)的不穿过直线 $y = x$ 的非降路径数为 $\binom{n + m}{n} - \binom{n + m}{n + 1}$.
+    \item 生成函数 $H(x) = \sum\limits_{k = 1}^{\infty} A_k x^k = \frac{1 - \sqrt{1 - 4x}}{2x}$.
+  \end{compactenum}
+\end{compactenum}

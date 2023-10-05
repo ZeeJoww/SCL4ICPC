@@ -1,0 +1,141 @@
+\section{TEST}
+
+\subsection{ALL todo lists}
+
+\subsubsection{Math}
+
+\begin{todolist}
+
+\item 素性：杜教筛，Min25-筛
+
+\item 数论函数：狄利克雷卷积，莫比乌斯反演
+
+\item 线性代数：线性基，常系数线性递推
+
+\item 多项式：拉格朗日插值，集合幂级数（FWT/FMT）
+
+\item 组合数学：错排，卡特兰数，斯特林数，伯努利数，BM（最短线性递推），min-max容斥，二项式反演，prufer序列
+
+\item 群论：置换，Burnside定理，Polya定理
+
+\item 数值积分：辛普森，自适应辛普森
+
+\end{todolist}
+
+\subsubsection{String}
+
+\begin{todolist}
+
+\item （？）：后缀自动机，回文自动机，最小表示法，Lyndon分解
+
+\end{todolist}
+
+\subsubsection{Data-Structure}
+
+\begin{todolist}
+
+\item 堆：对顶堆
+
+\item 区间操作：树状数组求第k大，二维树状数组，李超线段树，线段树合并；
+
+\item 树相关：替罪羊树；笛卡尔树，虚树，kd-tree，析合树；长链剖分
+
+\item 并查集：带权并查集，可持续化并查集
+
+\item 分块：莫队，链上分块，树上分块
+
+\item misc：DLX(Dancing Links)
+
+\end{todolist}
+
+\subsubsection{Graph}
+
+\begin{todolist}
+
+\item 最短路：差分约束，k短路
+
+\item 连通分量：圆方树
+
+\item 二分图：匈牙利，KM，Hopcraft-Karp
+
+\item 网络流：SAP；最大流，可行流，zkw费用流(?)；上下界网络流
+
+\item misc：欧拉回路，2-SAT，斯坦纳树，3/4元环，最小树形图，一般图匹配，最小瓶颈路，全局最小割
+
+\end{todolist}
+
+\subsubsection{CG}
+
+\begin{todolist}
+
+\item 工具：交点，Voronoi，最小圆覆盖
+
+\end{todolist}
+
+%\begin{center}
+%\begin{tikzpicture}
+%\begin{axis}[x={(10,0)},y={(0,10)},z={({-10/sqrt(8)},{-10/sqrt(8)})},
+%minor tick num=4,xmin=0,xmax=9.9,ymin=0,ymax=9.9,zmin=0,
+%zmax=12.7,ticks=none,clip=false,tick style={opacity=0}]
+%\draw[->, >=latex, ultra thick] (0,0,-2.6) -- (0,0,13) node[left]{$x_1$};
+%\draw[->, >=latex, ultra thick] (0,0,0) -- (10,0,0) node[below]{$x_2$};
+%\draw[->, >=latex, ultra thick] (0,0,0) -- (0,10,0) node[left]{$x_3$};
+%\draw[fill=green!50!white, nearly transparent] (0,0,0) -- (0,0,12.7) -- (0,9.9,12.7) -- (0,9.9,0);
+%\draw[fill=blue!50!white, nearly transparent] (0,0,0) -- (9.9,0,0) -- (9.9,9.9,0) -- (0,9.9,0);
+%\draw[fill=red!50!white, nearly transparent] (0,0,0) -- (9.9,0,0) -- (9.9,0,12.7) -- (0,0,12.7);
+%
+%\addplot3[->,no marks,blue,ultra thick] coordinates {(4,0,5.2) (4,4,5.2)};
+%\addplot3[->,no marks,red,ultra thick] coordinates {(0,0,5.2) (4,0,5.2)};
+%\addplot3[->,no marks,green,ultra thick] coordinates {(0,0,0) (0,0,5.2)};
+%\shade[ball color=yellow] (4,4,5.2) circle (0.2);
+%\end{axis}
+%\end{tikzpicture}
+%
+%
+%\begin{figure}[htb]
+%\centering
+%\begin{tikzpicture}[>=Stealth] %修改箭头样式
+%  \draw[thick] (1,0) .. controls (2,-1) and (3.2,-1.2) 
+%     .. (4,0) .. controls (5,2) and (5,3) 
+%     .. (4,4) .. controls (3,5) and (2,5)
+%     .. (0,4) .. controls (-1,3.5) and (-1,2.1)
+%     .. (0,1) -- (1,0); % 若尔当曲线
+%  \draw[->] (-1,0) -- (5.5,0) node[below] {$x$}; 
+%  \draw[->] (0,-1) -- (0,5) node[left] {$y$}; 
+%  \node[below left] at (0,0) {$O$}; 
+%  \node[below right] at (3.5,-0.5) {$c$};
+%  \node at (2,2) {$I(c)$};
+%  \node[right] at (5,3) {$E(c)$};
+%\end{tikzpicture}
+%\caption{若尔当定理示意图}\label{fig:RCT}
+%\end{figure}
+%\end{center}
+
+
+
+%\setcounter{page}{55}
+%\newpage
+%
+%\section*{Hot-Fix 补丁}
+%
+%\setcurdir{Math}
+%
+%\cppinputlisting{phi-presum-1e10}
+%
+%\setcurdir{String}
+%
+%\cppinputlisting{PAM}
+%
+%Lyndon 串：字典序严格小于自身所有非平凡后缀的字符串。
+%
+%Lyndon 分解： $s = w_1 + \cdots + w_k$，其中 $w_i$ 是 Lyndon 串且 $w_1 \geqslant \cdots \geqslant w_k$.
+%
+%\cppinputlisting{Lyndon}
+%
+%\cppinputlisting{minimal-cyclic-shift}
+%
+%\cppinputlisting{extsam}
+%
+%\setcurdir{Graph}
+%
+%\cppinputlisting{MST/xormst}
